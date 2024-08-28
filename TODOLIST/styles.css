@@ -9,6 +9,17 @@ body {
     margin: 0 auto;
 }
 
-.dateName date {
-    width: 50%;
+.listContainer {
+    display: flex;
+    gap: 5px;
+    margin-top: -10px;
+}
+
+.listContainer #date {
+    width: 20%;
+    font-size: 14px;
+}
+
+.listContainer > #listName {
+    flex: 1;
 }

@@ -9,12 +9,14 @@
 </head>
 <body>
     
+    <form method="post"></form>
     <main>
         <h1>TODOリスト</h1>
 
-        <div class="dateName">
+        <div class="listContainer">
             <input type="date" name="date" id="date">
-            <input type="text" name="name" id="taskList">
+            <input type="text" name="name" id="listName">
+            <button>追加</button>
         </div>
 
 
