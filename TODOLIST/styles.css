@@ -15,11 +15,36 @@ body {
     margin-top: -10px;
 }
 
-.listContainer #date {
-    width: 20%;
-    font-size: 14px;
+#date {
+    width: 15%;
 }
 
-.listContainer > #listName {
+#listName {
     flex: 1;
+}
+
+table {
+    text-align: left;
+    margin-top: 50px;
+}
+
+.date {
+    width: 100px;
+}
+
+.project {
+    width: 400px;
+}
+
+.unfinish, .finish, .delete, .space {
+    width: 60px;
+    text-align: center;
+}
+
+table button {
+    text-align: center;
+}
+
+table input {
+    cursor: pointer;
 }
