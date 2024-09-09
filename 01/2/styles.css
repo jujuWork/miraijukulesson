@@ -11,3 +11,8 @@ html, body {
     align-items: center;
     justify-content: center;
 }
+
+.btn {
+    background-color: rgba(0, 0, 255, 0.8);
+    color: white;
+}
