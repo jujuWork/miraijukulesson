@@ -1,6 +1,13 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習問題</title>
+</head>
+<body>
+    
+<p>type: hello</p>
 
-    $type = $_GET['10'];
-
-?>
-
+</body>
+</html>
