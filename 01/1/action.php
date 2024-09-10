@@ -7,6 +7,12 @@
 </head>
 <body>
     
+    <?php
+        $type = $_GET['fruits'];
+        $name = $_GET['apple'];
+
+        echo $type[0];
+    ?>
 <p>type: hello</p>
 
 </body>
