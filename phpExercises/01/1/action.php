@@ -5,9 +5,9 @@
 
 // echo $type, $name;
 
-echo $_GET['type'];
+echo ("id: " . $_GET['type']);
 echo "<br>";
-echo $_GET['name'];
+echo ("name: " . $_GET['name']);
 
 // if( isset($_GET['type' . 'name'])) {
 //     echo $type, $name;
