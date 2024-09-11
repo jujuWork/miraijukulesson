@@ -1,6 +1,10 @@
 <?php
 
-$type=$_GET['fruit'];
-$name=$_GET['apple'];
+// $type = $_GET["type"];
+// $name = $_GET["name"];
 
-echo $type, $name;
+if( isset($_GET['type' . 'name'])) {
+    echo $_GET['type' . 'name'];
+}
+
+// echo $type, $name;
