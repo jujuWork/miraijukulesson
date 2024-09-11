@@ -1,10 +1,12 @@
 <?php
 
-// $type = $_GET["type"];
-// $name = $_GET["name"];
+// $type = $_GET["fruit"];
+// $name = $_GET["apple"];
 
-if( isset($_GET['type' . 'name'])) {
-    echo $_GET['type' . 'name'];
-}
+echo $_GET['type'];
+echo "<br>";
+echo $_GET['name'];
 
-// echo $type, $name;
+// if( isset($_GET['type' . 'name'])) {
+//     echo $type, $name;
+// }
