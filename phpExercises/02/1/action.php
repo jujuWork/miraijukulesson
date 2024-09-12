@@ -1,9 +1,11 @@
 <?php
 
-$id = $_POST['type'];
-$name = $_POST['name'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+    $type = htmlspecialchars($_POST["type"]);
+    $name = htmlspecialchars($_POST["name"]);
 
-echo ("id: " . $_POST['type']);
-echo "<br>";
-echo ("name: " . $_POST['name']);
-
+    echo ("ID: ") . $type;
+    echo "<br>";
+    echo ("Name: ") . $name;
+}
