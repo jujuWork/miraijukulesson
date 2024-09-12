@@ -1,7 +1,7 @@
 <?php
 
-$type = $_GET["type"];
-$name = $_GET["name"];
+// $type = $_GET["type"];
+// $name = $_GET["name"];
 
 echo ("id: " . $_GET['type']);
 echo "<br>";
