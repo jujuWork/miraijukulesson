@@ -8,13 +8,22 @@
 //     echo "100未満です";
 // }
 
-$score = true;
+$score = (int)$_POST["score"];
 
 switch ($score) {
     case ($score <= 60 ):
-        echo "your score is less that 100";
+        echo "残念でした、次回は頑張りましょう";
             break;
     case ($score <= 70);
-        echo "your score is less that 90";
+        echo "合格です";
+            break;
+    case ($score <= 80);
+        echo "まずまずです。";
+            break;
+    case ($score <= 100);
+        echo "優秀です！";
+            break;
+    case ($score >= 100);
+        echo "満点です!";
             break;
     }
