@@ -1,13 +1,5 @@
 <?php
 
-// $score = (int)$_POST["score"];
-
-// if ($score >=100) {
-//     echo "100以上です!";
-// } else {
-//     echo "100未満です";
-// }
-
 $score = (int)$_POST["score"];
 
 switch ($score) {
