@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <form action="action.php" method="post">
+        <label for="menu">メニューをお選びください</label> <br><br>
+            <ul>
+                <li>
+                    <input type="radio" name="ramen_menu" value="ramen" id="ramen">
+                        <label>ラーメン</label>
+                </li>
+                <li>
+                    <input type="radio" name="ramen_menu" value="chashu_ramen" id="chashu_ramen">
+                        <label>チャーシュー麺</label>
+                </li>
+                <li>
+                    <input type="radio" name="ramen_menu" value="kotte_ramen" id="kotte_ramen">
+                        <label>こってりラーメン</label>
+                </li>
+                <li>
+                    <input type="radio" name="ramen_menu" value="ajidama_ramen" id="ajidama_ramen">
+                        <label>味玉ラーメン</label>
+                </li>
+                <li>
+                    <input type="radio" name="ramen_menu" value="miso_ramen" id="miso_ramen">
+                        <label>味噌ラーメン</label>
+                </li>
+                <li>
+                    <input type="radio" name="ramen_menu" value="tokusei_ramen" id="tokusei_ramen">
+                        <label>特製ラーメン</label>
+                </li>
+            </ul> <br><br>
+
+            <button type="submit">送信</button>
+    </form>
+
+</body>
+</html>
