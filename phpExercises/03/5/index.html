@@ -10,7 +10,14 @@
     <form action="action.php" method="post">
         <label for="loopCount">ループの回数をお選びください</label>
                 <br><br>
-            <input type="number" name="loopCount">
+            <select>
+                <option value=""></option>
+                <option value="5" name="loopCount">5</option>
+                <option value="10" name="loopCount">10</option>
+                <option value="15" name="loopCount">15</option>
+                <option value="20" name="loopCount">20</option>
+                <option value="25" name="loopCount">25</option>
+            </select>
                 <br><br>
 
         <button type="submit">送信</button>
