@@ -14,6 +14,8 @@
             echo "<li>" . $i . "回目</li>";
         }
 
+
+        // do i need to put html to see the number 10 line in this page?
     ?>
 </body>
 </html>
