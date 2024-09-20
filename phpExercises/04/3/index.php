@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-        <? echo "<table>". "<td>" . "メニュー" . "</td>" . "</table>" ?>
+        <? echo "<table class='menu'> " . "<td>" . "メニュー" . "</td>" . "</table>" ?>
     <?php
         
         $array = 
@@ -21,7 +21,8 @@
                 foreach ($array as $array) {
                     echo "<table>" . "<td>" . $array . "</td>" . "</table>";
                 }
-        ?>
+
+    ?>
     
 </body>
 </html>
