@@ -1,10 +1,20 @@
+body {
+    width: 300px;
+}
+
 .menu {
+    text-align: center;
+    border: 2px solid black;
+    width: 100%;
+}
+
+.array_num {
+    border: 1px solid grey;
+    width: 50px;
     text-align: center;
 }
 
-table {
+.array_menu {
     border: 1px solid grey;
-    width: 300px;
-    height: 100%;
-    margin: 5px;
+    width: 250px;
 }

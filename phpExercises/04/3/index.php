@@ -30,7 +30,7 @@
                 // }
         
         for ($i = 0; $i < sizeof($array_num); $i++) {
-            echo "<table>" . "<td>" . $array_num[$i] . ' ' . $array[$i] . "</td>" . "</table>";
+            echo "<table>" . "<td class='array_num'>" . $array_num[$i] . "</td>" . ' ' . "<td class='array_menu'>" . $array[$i] . "</td>" . "</table>";
         }
 
     ?>
