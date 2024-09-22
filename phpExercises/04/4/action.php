@@ -12,9 +12,9 @@
     <p><h3>お選びになったメニューはこちらです</h3></p>
     <?php
 
-    foreach ($_POST['checkbox'] as $checkbox) {
-        echo "<table>" . $checkbox . ' ' . "</table>";
-    }
+        foreach ($_POST['checkbox'] as $checkbox) {
+            echo "<table>" . $checkbox . ' ' . "</table>";
+        }
 
     ?>
     
