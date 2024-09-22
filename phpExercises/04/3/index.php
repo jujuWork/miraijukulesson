@@ -17,10 +17,21 @@
             "エビフライ定食", "オムライス", "カレーライス", "ごはん大",
             "ごはん小", "ビール", "烏龍茶"
         ];
+
+        // $array_num = 
+        // [
+        //     "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"
+        // ];
+
+        $array_num = range(0,11);
             
-                foreach ($array as $array) {
-                    echo "<table>" . "<td>" . $array . "</td>" . "</table>";
-                }
+                // foreach ($array as $array) {
+                //     echo "<table>" . "<td>" .  $array . "</td>" . "</table>";
+                // }
+        
+        for ($i = 0; $i < sizeof($array_num); $i++) {
+            echo "<table>" . "<td>" . $array_num[$i] . ' ' . $array[$i] . "</td>" . "</table>";
+        }
 
     ?>
     
