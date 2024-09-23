@@ -17,10 +17,10 @@
         <!-- <ul> 
          
             <li>
-                <input type="radio" value="A ランチ" name="radio[]">A ランチ
+                <input type="color" value="A ランチ" name="radio[]">A ランチ
             </li>
             <li>
-                <input type="radio" value="B ランチ" name="radio[]">B ランチ
+                <input type="color" value="B ランチ" name="radio[]">B ランチ
             </li>
             <li>
                 <input type="radio" value="C ランチ" name="radio[]">C ランチ
@@ -52,17 +52,21 @@
 
         </ul> -->
 
-        <select name="menu_list">
-            <option value="Menu" placeholder="Menu"></option>
-            <option value="A_lunch">A Lunch</option>
-            <option value="B_lunch">B Lunch</option>
-            <option value="B_lunch">C Lunch</option>
-            <option value="B_lunch">D Lunch</option>
-            <option value="B_lunch">E Lunch</option>
-            <option value="B_lunch">F Lunch</option>
-        </select>
 
-        <br>
+        <select multiple name="menu[]" size="12">
+            <option value="Aランチ">Aランチ</option>
+            <option value="Bランチ">Bランチ</option>
+            <option value="Cランチ">Cランチ</option>
+            <option value="唐揚げ定食">唐揚げ定食</option>
+            <option value="とんかつ定食">とんかつ定食</option>
+            <option value="エビフライ定食">エビフライ定食</option>
+            <option value="オムライス">オムライス</option>
+            <option value="カレーライス">カレーライス</option>
+            <option value="ごはん大">ごはん大</option>
+            <option value="ごはん小">ごはん小</option>
+            <option value="ビール">ビール</option>
+            <option value="烏龍茶">烏龍茶</option>
+        </select>
 
         <button type="submit" class="btn">送信</button>
     </form>

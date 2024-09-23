@@ -12,8 +12,8 @@
     <p><h3>お選びになったメニューはこちらです</h3></p>
     <?php
 
-        foreach ($_POST['radio'] as $radio) {
-            echo "<table>" . $radio . ' ' . "</table>";
+        foreach ($_POST['menu'] as $menu) {
+            echo "<table>" . $menu . "</table>";
         }
 
     ?>
