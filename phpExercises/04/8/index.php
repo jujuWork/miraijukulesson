@@ -1,38 +1,65 @@
+<?php
+
+$products = [
+    0 => [
+        'product_name' => 'みかん',
+        'production_area' => '愛媛県',
+        'quality' => '優',
+        'price' => 3000,
+    ],
+
+    1 => [
+        'product_name' => 'りんご',
+        'production_area' => '青森県',
+        'quality' => '優',
+        'price' => 5000,
+    ],
+
+    2 => [
+        'product_name' => 'バナナ',
+        'production_area' => 'フィリピン',
+        'quality' => '優',
+        'price' => 1500,
+    ],
+];
+
+?>
+    // foreach ($products as $products) {
+    //     foreach ($products as $v) {
+    //         echo $v; 
+    //     }
+    // };
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     
-    <?php
+        <table>
+            <tr>
+                <th>Product_Name</th>
+                <th>Production_Area</th>
+                <th>Quality</th>
+                <th>Price</th>
+            </tr>
 
-        $menu = ["product_name", "production_area", "quality", "price"];
-        $array01 = ["みかん", "愛媛県", "優", 3000];
-        $array02 = ["りんご", "⻘森県", "優", 5000];
-        $array03 = ["バナナ", "フィリピン", "優", 1500];
+                <?php
+                    foreach ($products as $products) :
+                ?>
+                    <tr>
+                        <?php
+                            foreach ($products as $v) :
+                        ?>
+                            <?= $v ?>
+                    </tr>
 
-        foreach ($menu as $key => $value) {
-            echo 
-            "<table>" .
-                "<tr> " . 
-                    "<th>" . $menu[$key] . "</th>" .
-                "</tr>" . 
-                    "<td>" .  $array01[$key] . "</td>" . 
-                    "<td>" .  $array02[$key] . "</td>" . 
-                    "<td>" .  $array03[$key] . "</td>" .
-                
-            "</table>";
-
-            // print_r($menu = $array);
-        }
-    
-    ?>
+                    <?php endforeach ?>
+        </table>
 
 </body>
 </html>
-
