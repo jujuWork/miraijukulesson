@@ -24,11 +24,11 @@ $products = [
 ];
 
 ?>
-    // foreach ($products as $products) {
+    <!-- // foreach ($products as $products) {
     //     foreach ($products as $v) {
     //         echo $v; 
     //     }
-    // };
+    // }; -->
 
 
 <!DOCTYPE html>
@@ -47,18 +47,14 @@ $products = [
                 <th>Quality</th>
                 <th>Price</th>
             </tr>
-
-                <?php
-                    foreach ($products as $products) :
-                ?>
+            <?php   foreach ($products as $products) : ?>
                     <tr>
-                        <?php
-                            foreach ($products as $v) :
-                        ?>
-                            <?= $v ?>
+                        <?php foreach ($products as $v) : ?>
+                           <td> <?= $v ?> </td>
+                        <?php  endforeach ?>
                     </tr>
-
                     <?php endforeach ?>
+                
         </table>
 
 </body>
