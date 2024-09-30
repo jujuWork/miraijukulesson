@@ -4,6 +4,7 @@ $num1 = (int)$_POST["num1"];
 $num2 = (int)$_POST["num2"];
 $num3 = (int)$_POST["num3"];
 
+
 // MAXIMUM
 $max = max($num1, $num2, $num3);
 
