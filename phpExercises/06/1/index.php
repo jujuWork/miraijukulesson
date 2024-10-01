@@ -23,7 +23,7 @@ if (isset($_SESSION['message'])) {
     
     <form action="action.php" method="post">
         <label for="message">Your message:</label> <br>
-            <input type="text" name="message">  <br><br>
+            <input type="text" name="message" value="<?= $message ?>">  <br><br>
 
         <button type="submit">Submit</button>
     </form>
