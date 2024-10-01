@@ -7,8 +7,10 @@ function isLengthWithinLimit($character, $limit) {
         return true;
 }
 
-if (isLengthWithinLimit($_POST['chacracter'], 40)) {
-    Your Count is: $character which is 50DOWN;;
+if (isLengthWithinLimit($_POST['character'], 50)) {
+    echo "Your Count is  which is 50DOWN";
+        //入力された文字列は50文字以内です。
 } else {
-    YourCount is: $character which is 50UP;
+    echo "Your Count is: which is 50UP";
+        //入力された文字列は51文字以上あります。
 }
