@@ -60,5 +60,7 @@ $products =
         </tbody>
     </table>
 
+    <a href="./cart_add.php">Back to Cart</a>
+
 </body>
 </html>
