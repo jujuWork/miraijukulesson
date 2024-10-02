@@ -41,11 +41,28 @@ $total = 0;
                                 <?= $v['num'] ?>
                                 <input type="hidden" name="num" value="<?= $v['num'] ?>">
                             </td>
+                            <td>
+                                <?php
+                                    // calculating price and quantity
+                                    $sum = $v['price'] * $v['num'];
+                                    // adding the quantity and the $sum
+                                    $total += $sum;
+                                    // totaled the price
+                                    echo $sum . '円';
+                                ?>
+                            </td>
+                            <td>
+                                <input type="hidden" name="id" value="<?= $k ?>">
+                                <input type="submit" name="delete">
+                            </td>
                         </tr>
                     </form>
                 <?php endforeach ?>
             </tbody>
         <?php endif ?>
     </table>
+    <p>Total: <?= $total ?>円</p>
+    <p><a href="./cart_del_all.php">Delete cart items</a></p>
+    <p><a href="./">Back</a></p>
 </body>
 </html>
