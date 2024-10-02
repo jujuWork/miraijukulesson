@@ -31,7 +31,7 @@ if (!isset($_SESSION['count'])) {
     <div>
          <p><?= $_SESSION['count'] ?></p>
         <a href="./index2.php">Counter</a>
-        <a href="index2.php">Reset</a>
+        <a href="./reset">Reset</a>
 
     </div>
 </body>
