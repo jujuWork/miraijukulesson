@@ -34,7 +34,7 @@ $total = 0;
                                 <input type="hidden" name="product_name" value="<?= $v['product_name'] ?>">
                             </td>
                             <td>
-                                <?=$v['price'] ?>円
+                                <?= $v['price'] ?>円
                                 <input type="hidden" name="price" value="<?= $v['price'] ?>">
                             </td>
                             <td>
