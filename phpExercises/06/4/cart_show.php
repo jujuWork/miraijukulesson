@@ -6,7 +6,7 @@ session_start();
 // Session Regenerate ID
 session_regenerate_id();
 
-$_total = 0;
+$total = 0;
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +49,8 @@ $_total = 0;
                             <td>
                                 <?php
                                     // Subtotal Amount
-                                    $sum = $v['price'] * $v['num'];
+                                    // if there is no (int) there will be an error in this code because of false multiplication
+                                    $sum = (int)$v['price'] * (int)$v['num']; 
                                     // Adding the Subtotal Amount to the total
                                     $total += $sum;
                                     // Show Subtotals
