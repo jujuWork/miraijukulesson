@@ -10,5 +10,5 @@ session_regenerate_id();
 $_SESSION['cart'][] = $_POST;
 
 // back to the index.php
-header('location ./index.php');
+header('Location: index.php');
 exit;
