@@ -12,6 +12,6 @@ class Dog
     }
 }
 
-$name = new Dog("bee");
+// $name = new Dog("bee");
 
 echo $name->dog;
