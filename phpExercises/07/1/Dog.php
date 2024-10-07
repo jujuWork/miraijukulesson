@@ -6,12 +6,12 @@ class Dog
     public $dog = "はち";
 
         // Constructor
-    // public function __construct($dog)
-    // {
-    //     $this->dog = $dog;
-    // }
+    public function __construct($dog)
+    {
+        $this->dog = $dog;
+    }
 }
 
-$name = new Dog;
+$name = new Dog("bee");
 
 echo $name->dog;
