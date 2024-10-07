@@ -3,7 +3,7 @@
 class Dog 
 {
         // Properties / Fields
-    public $dog = "hachi";
+    public $dog = "はち";
 
         // Constructor
     // public function __construct($dog)
@@ -12,7 +12,6 @@ class Dog
     // }
 }
 
-$breed = new Dog("Hachi");
+$name = new Dog;
 
-echo $breed->dog;
-
+echo $name->dog;
