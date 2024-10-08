@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?php
-        require_once "Dog.php";
-    ?>
-</body>
-</html>
+<?php
+
+require_once('Dog.php');
+
+$dogName = 'Hachi';
+$dogAge = 5;
+
+function getDogProfile($dogName, $dogAge) {
+    return "Name: " . $dogName . "<br>" .
+            "Age: " . $dogAge;
+}
+
+echo getDogProfile($dogName, $dogAge);

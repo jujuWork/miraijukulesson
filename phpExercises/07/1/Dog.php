@@ -3,15 +3,23 @@
 class Dog 
 {
         // Properties / Fields
-    public $dog = "はち";
+    private $dogName;
+    private $dogAge;
+
 
         // Constructor
-    public function __construct($dog)
+    public function __construct($dogName, $dogAge)
     {
-        $this->dog = $dog;
+        $this->name = $dogName;
+        $this->age = $dogAge;
+    }
+
+        // Method
+    public function getDogProfile() {
+        return "Name: " . $this->name . "<br>" .
+        "Age: " . $this->age;
     }
 }
 
-// $name = new Dog("bee");
-
-echo $name->dog;
+$dog = new Dog('Mii', '6');
+echo $dog->getDogProfile();
