@@ -10,4 +10,4 @@ function getDogProfile($dogName, $dogAge) {
             "Age: " . $dogAge;
 }
 
-echo getDogProfile($dogName, $dogAge);
+// echo getDogProfile();
