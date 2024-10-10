@@ -4,11 +4,11 @@ class Dog
 {
     private $name;
     private $age;
-    private $type;
+    private $profile;
 
-    public function __construct($type)
+    public function __construct($profile)
     {
-        $this->type = $type;
+        $this->profile = $profile;
     }
 
     public function setName($name)
@@ -21,8 +21,13 @@ class Dog
         $this->age = $age;
     }
 
+    public function showName()
+    {
+        echo '<p>' . $this->name . '</p>';
+    }
+
     public function showProfile()
     {
-        echo $this->name . $this->age;
+        echo '<p>My name is ' . $this->name . " I'm " .$this->age . ' years old ' . ' and my breed is ' .$this->profile . '</p>' . '<br>';
     }
 }
