@@ -3,6 +3,7 @@
 require_once('coins.php');
 
 $coins = new coinCase();
-$coins->addCoins(500円, 100円, 50円, 10円, 5円, 1円);
+$coins->addCoins(500, 100, 50, 10, 5, 1);
 $coins->getCount();
 $coins->getAmount();
+$ccins->showProfile();

@@ -14,6 +14,11 @@ class Dog {
         $this->type = $type;
     }
 
+    // public function setName();
+    // {
+
+    // }
+
         // Method (accessing the private properties)
     public function showProfile()
     {
