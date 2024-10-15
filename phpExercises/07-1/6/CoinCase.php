@@ -4,7 +4,6 @@ class CoinCase
 {
     private $coin;
     private $count;
-    private $amount;
 
     public function __construct($coin, $count)
     {
@@ -12,11 +11,8 @@ class CoinCase
         $this->count = $count;
     }
 
-    public function getAmount()
+    public function count()
     {
-        return $this->coin . " 円玉は " . $this->count . " 枚";
+        $this->count += 1;
     }
 }
-
-$coin1 = new CoinCase(500, 4);
-echo $coin01->getAmount();
