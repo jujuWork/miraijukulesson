@@ -1,15 +1,22 @@
 <?php
 
-class coinCase
+class CoinCase 
 {
-    private $addcoin;
+    private $coin;
     private $count;
     private $amount;
 
-    public function __construct($addcoin, $age, $type)
+    public function __construct($coin, $count)
     {
-        $this->addcoin = $addcoin;
+        $this->coin = $coin;
         $this->count = $count;
-        $this->amount = $amount;
+    }
+
+    public function getAmount()
+    {
+        return $this->coin . " 円玉は " . $this->count . " 枚";
     }
 }
+
+$coin1 = new CoinCase(500, 4);
+echo $coin01->getAmount();
