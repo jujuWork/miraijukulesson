@@ -9,14 +9,16 @@ for ($i = 0; $i < 10; $i++) {
     $coinCount = $i + 1; // example to increase coin count each time
 
     $coinCase->addCoins($coinType, $coinCount); // Add coins
-    echo "Added $coinCount coins of $coinType yen. \n";
+    echo "Added $coinCount coins of $coinType yen." . "<br>";
+    echo "<br>";
 }
 
-echo "Number of 500 yen coins: " . $coinCase->getCount(500) . "\n";
-echo "Number of 100 yen coins: " . $coinCase->getCount(100) . "\n";
-echo "Number of 50 yen coins: " . $coinCase->getCount(50) . "\n";
-echo "Number of 10 yen coins: " . $coinCase->getCount(10) . "\n";
-echo "Number of 5 yen coins: " . $coinCase->getCount(5) . "\n";
-echo "Number of 1 yen coins: " . $coinCase->getCount(1) . "\n";
+echo "Number of 500 yen coins: " . $coinCase->getCount(500) . "<br>" . "<br>";
+echo "Number of 100 yen coins: " . $coinCase->getCount(100) . "<br>" . "<br>";
+echo "Number of 50 yen coins: " . $coinCase->getCount(50) . "<br>" . "<br>";
+echo "Number of 10 yen coins: " . $coinCase->getCount(10) . "<br>" . "<br>";
+echo "Number of 5 yen coins: " . $coinCase->getCount(5) . "<br>" . "<br>";
+echo "Number of 1 yen coins: " . $coinCase->getCount(1) . "<br>" . "<br>";
 
-echo "Total amount of money: " . $coinCase->getAmount() . "yen.\n";
+echo "<br>";
+echo "Total amount of money: " . $coinCase->getAmount() . "yen.";
