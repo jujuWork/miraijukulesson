@@ -4,7 +4,7 @@ class Dog
 {
     public function speak()
     {
-        return "ワンワン";
+        return "ワンワン" . "<br>";
     }
 }
 
@@ -12,7 +12,7 @@ class Cat
 {
     public function speak()
     {
-        return "ニャー";
+        return "ニャー" . "<br>";
     }
 }
 
