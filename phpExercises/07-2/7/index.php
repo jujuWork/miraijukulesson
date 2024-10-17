@@ -16,12 +16,19 @@ class Cat
     }
 }
 
-$animals = [];
-$animals[] = new Dog();
-$animals[] = new Cat();
-$animals[] = new Dog();
-$animals[] = new Cat();
+$animals = [
+    new Dog('dog'),
+    new Cat('cat'),
+    new Dog('dog'),
+    new Cat("cat")
+];
+
+// $animals = [];
+// $animals[] = new Dog();
+// $animals[] = new Cat();
+// $animals[] = new Dog();
+// $animals[] = new Cat();
 
 foreach ($animals as $animal) {
-    echo $this->speak();
+    echo $animal->speak() . "\n";
 }
