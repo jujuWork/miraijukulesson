@@ -11,7 +11,7 @@ $fighter->fly();
 $fighter->fight();
 
     // Passenger Place
-$plane = new PassengerPlance('Passenger');
+$plane = new PassengerPlane('Passenger');
 $plane->showType();
 $plane->fly();
 $plane->carryPassengers();
