@@ -20,7 +20,7 @@ $animals = [
     new Dog('dog'),
     new Cat('cat'),
     new Dog('dog'),
-    new Cat("cat")
+    new Cat("cat"),
 ];
 
 // $animals = [];
