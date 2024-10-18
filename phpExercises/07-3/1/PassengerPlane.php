@@ -11,11 +11,11 @@ class PassengerPlane extends Airplane
 
     public function fly()
     {
-        echo '<p>The passenger plane in flying steadily</p>';
+        echo '<p>乗客を乗せて目的地まで飛行します</p>';
     }
 
     public function carryPassengers()
     {
-        echo '<p>The Passenger Plane is Carrying the passengers</p>';
+        echo '<p>乗客を目的地まで運びます</p>';
     }
 }

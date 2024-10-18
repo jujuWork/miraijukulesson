@@ -11,11 +11,11 @@ class FighterAircraft extends Airplane
 
     public function fly()
     {
-        echo '<p>The Fighter aircraft is flying fast!</p>';
+        echo '<p>攻撃に出るために飛行します</p>';
     }
 
     public function fight()
     {
-        echo '<p>The Fighter aircraft is is a fight</p>';
+        echo '<p>戦闘します</p>';
     }
 }

@@ -11,7 +11,7 @@ abstract class Airplane
 
     public function showType()
     {
-        echo '<p> Airplane Type: ' . $this->type . '</p>';    
+        echo $this->type;    
     }
 
     abstract public function fly();
