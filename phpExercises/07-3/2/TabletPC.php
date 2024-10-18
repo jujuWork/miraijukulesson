@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Computer.php';
+
 class TabletPC extends Computer
 {
     public function __construct()

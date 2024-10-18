@@ -1,5 +1,9 @@
 <?php
 
+require_once 'PersonalComputer.php';
+require_once 'TabletPC.php';
+require_once 'SmartPhone.php';
+
     // Create intance of each class
 $pc = new PersonalComputer();
 $tablet = new TabletPC();

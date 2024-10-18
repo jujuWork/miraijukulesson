@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Computer.php';
+
 class SmartPhone extends Computer
 {
     public function __construct()

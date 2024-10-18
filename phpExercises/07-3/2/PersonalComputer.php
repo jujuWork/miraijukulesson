@@ -1,19 +1,21 @@
 <?php
 
+require_once 'Computer.php';
+
 class PersonalComputer extends Computer
 {
     public function __construct()
     {
-        parent::__construct("Personal Computer"); // Set The type
+        parent::__construct("Personal Computer");
     }
 
     public function input()
     {
-        echo "Input: Using Keyboard and Mouse '<br>' ";
+        echo "Input: Using keyboard and mouse '<br>' ";
     }
 
-    public function ouput()
+    public function output()
     {
-        echo "Output: Displaying on monitor '<br>' ";
+        echo "Ouput: Displaying on monitor '<br>' ";
     }
 }
