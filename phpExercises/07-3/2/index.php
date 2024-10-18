@@ -18,7 +18,7 @@ echo "<br>";
 
 $tablet->showType();
 $tablet->input();
-$table->output();
+$tablet->output();
 $tablet->communication();
 echo "<br>";
 

@@ -23,6 +23,6 @@ abstract class Computer
         // Method to show how the computer communicates
     public function communication()
     {
-        echo "Communicatin over the internet '<br>' ";
+        echo "Communicatin over the internet <br> ";
     }
 }

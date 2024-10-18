@@ -11,11 +11,11 @@ class PersonalComputer extends Computer
 
     public function input()
     {
-        echo "Input: Using keyboard and mouse '<br>' ";
+        echo "Input: Using keyboard and mouse <br>";
     }
 
     public function output()
     {
-        echo "Ouput: Displaying on monitor '<br>' ";
+        echo "Ouput: Displaying on monitor <br>";
     }
 }

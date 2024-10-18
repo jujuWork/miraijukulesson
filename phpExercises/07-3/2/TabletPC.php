@@ -11,11 +11,11 @@ class TabletPC extends Computer
 
     public function input()
     {
-        echo "Input: Using touchscreen '<br>' ";
+        echo "Input: Using touchscreen <br>";
     }
 
     public function output()
     {
-        echo "Output: Displaying on touchscreen '<br>' ";
+        echo "Output: Displaying on touchscreen <br>";
     }
 }

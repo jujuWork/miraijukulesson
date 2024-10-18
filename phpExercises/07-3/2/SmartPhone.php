@@ -11,11 +11,11 @@ class SmartPhone extends Computer
 
     public function input()
     {
-        echo "Input: Using virtual Keyboard '<br>' ";
+        echo "Input: Using virtual Keyboard <br>";
     }
 
     public function output()
     {
-        echo "Output: Displaying on screen '<br>' ";
+        echo "Output: Displaying on screen <br>";
     }
 }
