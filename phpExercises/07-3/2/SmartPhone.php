@@ -6,16 +6,16 @@ class SmartPhone extends Computer
 {
     public function __construct()
     {
-        parent::__construct("Smartphone");
+        parent::__construct("スマートフォン");
     }
 
     public function input()
     {
-        echo "Input: Using virtual Keyboard <br>";
+        echo "タッチパネルディスプレイをタップして操作 <br>";
     }
 
     public function output()
     {
-        echo "Output: Displaying on screen <br>";
+        echo "タッチパネルディスプレイに出力 <br>";
     }
 }
