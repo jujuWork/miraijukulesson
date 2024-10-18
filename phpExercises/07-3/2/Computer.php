@@ -13,7 +13,7 @@ abstract class Computer
         // Method to show the type of computer
     public function showType()
     {
-        echo "This is a " . $this->type . "<br>";
+        echo "コンピュータの種類: " . $this->type . "<br>";
     }
 
         // Abstract method for input and output
@@ -23,6 +23,6 @@ abstract class Computer
         // Method to show how the computer communicates
     public function communication()
     {
-        echo "Communicatin over the internet <br> ";
+        echo "インターネットで通信 <br>";
     }
 }

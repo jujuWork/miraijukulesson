@@ -14,15 +14,16 @@ $pc->showType();
 $pc->input();
 $pc->output();
 $pc->communication();
-echo "<br>";
+echo "<p>---------------------------------------</p> <br>";
 
 $tablet->showType();
 $tablet->input();
 $tablet->output();
 $tablet->communication();
-echo "<br>";
+echo "<p>---------------------------------------</p> <br>";
 
 $smartphone->showType();
 $smartphone->input();
 $smartphone->output();
 $smartphone->communication();
+echo "<p>---------------------------------------</p> <br>";

@@ -6,16 +6,16 @@ class PersonalComputer extends Computer
 {
     public function __construct()
     {
-        parent::__construct("Personal Computer");
+        parent::__construct("パーソナルコンピュータ");
     }
 
     public function input()
     {
-        echo "Input: Using keyboard and mouse <br>";
+        echo "キーボード・マウスで入力 <br>";
     }
 
     public function output()
     {
-        echo "Ouput: Displaying on monitor <br>";
+        echo "ディスプレイに出力 <br>";
     }
 }
