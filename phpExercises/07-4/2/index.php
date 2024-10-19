@@ -20,19 +20,19 @@ funcMailer($mailer);
 funcComputer($computer);
 
     //defining a function in the Phone object
-function funcPhone(Phone $phone)
+function funcPhone(IPhone $phone)
 {
     $phone->callPhone();
     $phone->receivePhone();
 }
 
-function funcMailer(Mailer $mailer)
+function funcMailer(IMailer $mailer)
 {
     $mailer->sendMail();
     $mailer->receiveMail();
 }
 
-function funcComputer(Computer $computer)
+function funcComputer(IComputer $computer)
 {
     $computer->playGame();
     $computer->browseWeb();
