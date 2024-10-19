@@ -1,6 +1,6 @@
 <?php
 
-class Computer
+class Computer implements IComputer
 {
     public function playGame()
     {

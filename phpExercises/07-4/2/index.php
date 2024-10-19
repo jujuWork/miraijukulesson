@@ -10,28 +10,26 @@ $phone = new Phone();
 $mailer = new Mailer();
 $computer = new Computer();
 
-    //call function that interact with the Phone object
+    // Call function that uses this object
 funcPhone($phone);
-
-    //call function that interact with the Mailer object
 funcMailer($mailer);
-
-    //call function that interact with the Phone object
 funcComputer($computer);
 
-    //defining a function in the Phone object
+    // Function for phone
 function funcPhone(IPhone $phone)
 {
     $phone->callPhone();
     $phone->receivePhone();
 }
 
+    // Functino for Mailer
 function funcMailer(IMailer $mailer)
 {
     $mailer->sendMail();
     $mailer->receiveMail();
 }
 
+    // Functino for Computer
 function funcComputer(IComputer $computer)
 {
     $computer->playGame();

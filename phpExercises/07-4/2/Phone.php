@@ -1,6 +1,6 @@
 <?php
 
-class Phone
+class Phone implements IPhone
 {
     public function callPhone()
     {

@@ -1,6 +1,6 @@
 <?php
 
-class Mailer
+class Mailer implements IMailer
 {
     public function sendMail()
     {
