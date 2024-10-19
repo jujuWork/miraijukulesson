@@ -4,11 +4,11 @@ class Mailer
 {
     public function sendMail()
     {
-        echo "Sending an Email <br>";
+        echo "メールを送信する <br>";
     }
 
     public function receiveMail()
     {
-        echo "Receiving an Email <br>";
+        echo "メールを受信する <br>";
     }
 }

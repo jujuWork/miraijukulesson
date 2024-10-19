@@ -4,11 +4,11 @@ class Phone
 {
     public function callPhone()
     {
-        echo "Making a Phone call <br>";
+        echo "電話をかける <br>";
     }
 
     public function receivePhone()
     {
-        echo "Receiving a phone call <br>";
+        echo "電話を受ける <br>";
     }
 }
