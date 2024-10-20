@@ -5,9 +5,9 @@ require_once 'Computer.php';
 require_once 'Mailer.php';
 require_once 'Phone.php';
 
-require_once ('IComputer.php');
-require_once ('IMailer');
-require_once ('IPhone.php');
+require_once 'IComputer.php';
+require_once 'IMailer.php';
+require_once 'IPhone.php';
 
     // Creating an Object
 $phone = new Phone();

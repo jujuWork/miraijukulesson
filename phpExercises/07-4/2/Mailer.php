@@ -1,5 +1,7 @@
 <?php
 
+require_once 'IMailer.php';
+
 class Mailer implements IMailer
 {
     public function sendMail()

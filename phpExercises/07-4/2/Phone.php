@@ -1,5 +1,7 @@
 <?php
 
+require_once 'IPhone.php';
+
 class Phone implements IPhone
 {
     public function callPhone()

@@ -1,4 +1,5 @@
 <?php
+require_once 'IComputer.php';
 
 class Computer implements IComputer
 {
