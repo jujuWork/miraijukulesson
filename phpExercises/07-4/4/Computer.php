@@ -1,7 +1,8 @@
 <?php
+
 require_once 'IComputer.php';
 
-class GamingPC implements IComputer
+class ComputerPC implements IComputer
 {
     public function playGame()
     {
