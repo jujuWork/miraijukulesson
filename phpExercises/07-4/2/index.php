@@ -12,7 +12,7 @@ require_once 'IPhone.php';
     // Creating an Object
 $phone = new Phone();
 $mailer = new Mailer();
-$computer = new Computer();
+$computer = new GamingPC();
 
     // Call function that uses this object
 funcPhone($phone);

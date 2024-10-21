@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 require_once 'IComputer.php';
 
 class GamingPC implements IComputer
