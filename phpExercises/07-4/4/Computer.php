@@ -6,7 +6,7 @@ class ComputerPC implements IComputer
 {
     public function playGame()
     {
-        echo "3D ゲームをする <br>";
+        echo "ゲームをする <br>";
     }
 
     public function browseWeb()
