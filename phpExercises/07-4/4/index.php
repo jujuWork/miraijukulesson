@@ -1,22 +1,19 @@
 <?php
 
         // Loading the Classes
-require_once 'IComputer.php';
-require_once 'IMailer.php';
-require_once 'IPhone.php';
 require_once 'Cellphone.php';
 
-$phone = new CellPhone();
+$cellPhone = new CellPhone();
 
     // Creating an Object
-$phone = new Phone();
-$mailer = new Mailer();
-$computer = new ComputerPC();
+// $phone = new Phone();
+// $mailer = new Mailer();
+// $computer = new ComputerPC();
 
     // Call function that uses this object
-funcPhone($phone);
-funcMailer($phone);
-funcComputer($phone);
+funcPhone($cellPhone);
+funcMailer($cellPhone);
+funcComputer($cellPhone);
 
     // Function for phone
 function funcPhone(IPhone $phone)
