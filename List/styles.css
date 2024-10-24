@@ -1,0 +1,49 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.listContainer {
+    display: flex;
+    gap: 5px;
+    margin-top: -10px;
+}
+
+#date {
+    width: 15%;
+}
+
+#listName {
+    flex: 1;
+}
+
+table {
+    text-align: left;
+    margin-top: 50px;
+}
+
+.date {
+    width: 100px;
+}
+
+.project {
+    width: 400px;
+}
+
+.unfinish, .finish, .delete, .space {
+    width: 60px;
+    text-align: center;
+}
+
+table button {
+    text-align: center;
+}
+
+table input {
+    cursor: pointer;
+}
