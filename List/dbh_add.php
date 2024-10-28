@@ -1,6 +1,6 @@
 <?php
 
-$dsn = "mysql:host=localhost;dbname=TODOLIST";
+$dsn = "mysql:host=localhost;dbname=todolistdatabase;charset=utf8;";
 $dbusername = "root";
 $dbpassword = "root";
 

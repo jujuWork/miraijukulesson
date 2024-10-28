@@ -15,7 +15,7 @@
 
         <div class="listContainer">
             <input type="date" name="date" id="date">
-            <input type="text" name="name" id="listName" value="Task ...">
+            <input type="text" name="task" id="listName" value="Task ...">
             <button>追加</button>
         </div>
 
