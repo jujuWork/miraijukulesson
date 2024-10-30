@@ -3,16 +3,16 @@
 $host = '127.0.0.1';
 $port = '8889';
 $dbname = 'todolistdatabase';
-$usernamme = 'root';
+$username = 'root';
 $password = 'root';
 
 try {
-        // Connect to the database
+        // Connect to the database (MOST IMPORTANT)
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // RETRIEVE ALL DATA
-    $sql = "SELECT expirationi_date, todo_item FROM todo_items";
+    $sql = "SELECT expiration_date, todo_item FROM todo_items";
     $stmt = $pdo->query($sql);
 
         // FETCH ALL RESULT
@@ -57,6 +57,12 @@ try {
                 });
             </script>
         </section>
+
+        <aside>
+                <form action="add.php" method="post">
+                    
+                </form>
+        </aside>
     </main>
 </body>
 </html>
