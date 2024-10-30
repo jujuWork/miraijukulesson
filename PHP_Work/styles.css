@@ -1,37 +1,42 @@
 html, body {
     margin: 0 auto;
     padding: 0;
-    max-width: 500px;
+    max-width: 800px;
     box-sizing: border-box;
 }
 
-#form_header {
-    background-color: rgba(0,0,0,0.1);
-    width: 100%;
-    margin-top: 20px;
-    font-size: 2em;
-}
-
-#form_input {
-    margin-top: 10px;
-    width: 100%;
+main {
     display: flex;
     flex-direction: column;
 }
 
-input {
-    font-size: 1em;
-    width: 30%;
+header {
+    border: 1px solid rgba(0,0,0,0.3);
+    width: 100%;
+    margin-top: 10px;
+    background-color: rgba(0,0,0,0.1);
 }
 
-.input_date {
+header > h1 {
+    padding-left: 5px;
+}
+
+section {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.listContainer {
+    display: flex;
+    gap: 5px;
+}
+
+#expiration_date {
+    width: 20%;
     text-align: center;
 }
 
-.input_text_list {
-    flex: 2;
-}
-
-button {
-    font-size: 1em;
+#todo_item {
+    flex: 1;
 }
