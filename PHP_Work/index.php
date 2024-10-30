@@ -16,7 +16,7 @@ try {
     $stmt = $pdo->query($sql);
 
         // FETCH ALL RESULT
-    $todos = $stmt->fetch();
+    $todos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (PDOException $e) {
     echo "Connection Failed: " . $e->getMessage();
@@ -38,7 +38,7 @@ try {
 <body>
     <main>
         <header>
-            <h1 class="header_text">TODO List</h1>
+            <h1 class="header_text">TODO リスト</h1>
         </header>
 
         <section>
@@ -47,7 +47,7 @@ try {
                     <input type="text" name="expiration_date" id="expiration_date" value="<?php echo date('Y/m/d', time() + 9 *3600); ?>">
                     <input type="text" name="todo_item" id="todo_item" placeholder="TODO リストを⼊⼒してください">
 
-                    <button>Add</button>
+                    <button type="submit">Add</button>
                 </div>
             </form>
 
@@ -57,11 +57,23 @@ try {
                 });
             </script>
         </section>
-
+                
+                <!-- Displaying he to-do list -->
         <aside>
-                <form action="add.php" method="post">
-                    
-                </form>
+            <?php if (!empty($todos)): ?>
+                        <table>
+                            <tr>
+                                <th>期限日</th>
+                                <th>TODO項目</th>
+                            </tr>
+                            <?php foreach ($todos as $todo): ?>
+                                <tr>
+                                    <td><?= htmlspecialchars($todo['expiration_date']) ?></td>
+                                    <td><?= htmlspecialchars($todo['todo_item']) ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
+            <?php endif; ?>
         </aside>
     </main>
 </body>
