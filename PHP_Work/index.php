@@ -31,7 +31,7 @@ try {
 
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Calendar POP UP -->
+    <!-- Calendar POP UP LINK -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
@@ -51,6 +51,7 @@ try {
                 </div>
             </form>
 
+                <!-- Javascript for click calendar view -->
             <script>
                 flatpickr("#expiration_date", {
                     dateFormat: "Y/m/d",
@@ -71,7 +72,7 @@ try {
                             </tr>
                             <?php foreach ($todos as $todo): ?>
                                 <tr>
-                                        <!-- Form for each to-do item -->
+                                            <!-- Form for each to-do item -->
                                     <form action="action.php" method="post">
                                             <!-- Hidden input for to-do item -->
                                         <input type="hidden" name="id" value="<?= $todo['id'] ?>">
@@ -79,11 +80,27 @@ try {
                                         <td><?= htmlspecialchars($todo['expiration_date']) ?></td>
                                         <td><?= htmlspecialchars($todo['todo_item']) ?></td>
 
-                                        
+                                            <!-- Radio button for status (the isset is to check if the status key exist in the $todo array) -->
+                                        <td>
+                                            <input type="radio" name="status" value="0" <?= isset($todo['status']) && $todo['status'] == 0 ? 'checked' : '' ?>> Incomplete
+                                            <input type="radio" name="status" value="1" <?= isset($todo['status']) && $todo['status'] == 1 ? 'checked' : '' ?>> Complete
+                                        </td>
+
+                                            <!-- Checkbox for deleting item -->
+                                        <td>
+                                            <input type="checkbox" name="delete" value="1">
+                                        </td>
+
+                                            <!-- Submit button for the form -->
+                                        <td>
+                                            <button type="submit">Update</button>
+                                        </td>
                                     </form>
                                 </tr>
                             <?php endforeach; ?>
                         </table>
+                <?php else: ?>
+                    <p>No to-do items found.</p>
             <?php endif; ?>
         </aside>
     </main>
