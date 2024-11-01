@@ -66,9 +66,9 @@ try {
                             <tr>
                                 <th>期限日</th>
                                 <th>TODO項目</th>
-                                <th>Status</th>
-                                <th>Delete</th>
-                                <th>Action</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
                             </tr>
                             <?php foreach ($todos as $todo): ?>
                                 <tr>
@@ -82,18 +82,18 @@ try {
 
                                             <!-- Radio button for status (the isset is to check if the status key exist in the $todo array) -->
                                         <td>
-                                            <input type="radio" name="status" value="0" <?= isset($todo['status']) && $todo['status'] == 0 ? 'checked' : '' ?>> Incomplete
-                                            <input type="radio" name="status" value="1" <?= isset($todo['status']) && $todo['status'] == 1 ? 'checked' : '' ?>> Complete
+                                            <input type="radio" name="status" value="0" <?= isset($todo['status']) && $todo['status'] == 0 ? 'checked' : '' ?>> 未完了
+                                            <input type="radio" name="status" value="1" <?= isset($todo['status']) && $todo['status'] == 1 ? 'checked' : '' ?>> 完了
                                         </td>
 
                                             <!-- Checkbox for deleting item -->
                                         <td>
-                                            <input type="checkbox" name="delete" value="1">
+                                            <input type="checkbox" name="delete" value="1"> 削除
                                         </td>
 
                                             <!-- Submit button for the form -->
                                         <td>
-                                            <button type="submit">Update</button>
+                                            <button type="submit">送信</button>
                                         </td>
                                     </form>
                                 </tr>

@@ -19,16 +19,21 @@ try {
 
             // IF delete is checked, delete the item
         if ($delete) {
+            echo "Deleting item with ID: $id";
             $sql = "DELETE FROM todo_items WHERE id = :id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute(['id' => $id]);
+
+            echo "Item delete successfully. <br>";
         }
 
             // Otherwise, update the item's status
         else {
-            $sql = "UPDATE todo_items SET status = :status WHERE id = :id";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute(['status' => $status, 'id' => $id]);
+            echo "No delete action taken. <br>";
+            // echo "Updating item with ID: $id";
+            // $sql = "UPDATE todo_items SET status = :status WHERE id = :id";
+            // $stmt = $pdo->prepare($sql);
+            // $stmt->execute(['status' => $status, 'id' => $id]);
         }
     }
 
