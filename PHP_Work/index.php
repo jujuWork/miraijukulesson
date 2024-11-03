@@ -93,7 +93,7 @@ try {
 
                                             <!-- Submit button for the form -->
                                         <td>
-                                            <button type="submit">送信</button>
+                                            <button type="submit" class="update">送信</button>
                                         </td>
                                     </form>
                                 </tr>
