@@ -74,8 +74,8 @@ try {
                                 <tr>
                                             <!-- Form for each to-do item -->
                                     <form action="action.php" method="post">
-                                            <!-- Hidden input for to-do item -->
-                                        <input type="hidden" name="id" value="<?= $todo['id'] ?>">
+                                            <!-- Hidden input for to-do item --> 
+                                        <input type="hidden" name="id" value="<?= isset($todo['id']) ?> ">
 
                                         <td><?= htmlspecialchars($todo['expiration_date']) ?></td>
                                         <td><?= htmlspecialchars($todo['todo_item']) ?></td>
