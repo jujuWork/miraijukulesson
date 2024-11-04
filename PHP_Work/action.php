@@ -14,8 +14,8 @@ try {
         // Check if the for data was posted from index.php
     if (isset($_POST['id'])) {
         $id = (int)$_POST['id'];                     // Ensure ID is a number
-        $status = isset($_POST['status']) ? (int)$_POST['status'] : 0;        // Get Status or set to 0
-        $delete = isset($_POST['delete']);      // True if the delete checkbox was checked
+        $status = isset($_POST['status']); // ? (int)$_POST['status'] : 0;        // Get Status or set to 0
+        $delete = isset($_POST['delete']) ? 1 : 0;      // True if the delete checkbox was checked
 
             // IF delete is checked, delete the item
         if ($delete) {
@@ -29,10 +29,8 @@ try {
             // Otherwise, update the item's status
         else {
             echo "No delete action taken. <br>";
-            // echo "Updating item with ID: $id";
-            // $sql = "UPDATE todo_items SET status = :status WHERE id = :id";
-            // $stmt = $pdo->prepare($sql);
-            // $stmt->execute(['status' => $status, 'id' => $id]);
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([':id' => $id]);
         }
     }
 

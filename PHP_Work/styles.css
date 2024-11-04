@@ -60,3 +60,7 @@ th, td {
     background-color: rgba(0,0,255,0.75);
     color: #fff;
 }
+
+.completed {
+    text-decoration: line-through;
+}

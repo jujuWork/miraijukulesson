@@ -12,7 +12,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // RETRIEVE ALL DATA
-    $sql = "SELECT expiration_date, todo_item FROM todo_items";
+    $sql = "SELECT expiration_date, todo_item, id, status FROM todo_items";
     $stmt = $pdo->query($sql);
 
         // FETCH ALL RESULT
@@ -21,6 +21,9 @@ try {
 } catch (PDOException $e) {
     echo "Connection Failed: " . $e->getMessage();
 }
+// var_dump($todos);
+// exit;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,30 +75,39 @@ try {
                             </tr>
                             <?php foreach ($todos as $todo): ?>
                                 <tr>
+                                        <td>
+                                            <span style="<?= $todo['status'] == 1 ? 'completed' : ''; ?>">
+                                                <?= htmlspecialchars($todo['expiration_date']) ?>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span style="<?= $todo['status'] == 1 ? 'completed' : ''; ?>">
+                                                <?= htmlspecialchars($todo['todo_item']) ?>
+                                            </span>
+                                        </td>
+                                        <td>
                                             <!-- Form for each to-do item -->
-                                    <form action="action.php" method="post">
-                                            <!-- Hidden input for to-do item --> 
-                                        <input type="hidden" name="id" value="<?= isset($todo['id']) ?> ">
+                                        <form action="action.php" method="post">
 
-                                        <td><?= htmlspecialchars($todo['expiration_date']) ?></td>
-                                        <td><?= htmlspecialchars($todo['todo_item']) ?></td>
+                                                <!-- Hidden input for to-do item --> 
+                                            <input type="hidden" name="id" value="<?= $todo['id'] ?> ">
 
-                                            <!-- Radio button for status (the isset is to check if the status key exist in the $todo array) -->
-                                        <td>
-                                            <input type="radio" name="status" value="0" <?= isset($todo['status']) && $todo['status'] == 0 ? 'checked' : '' ?>> 未完了
-                                            <input type="radio" name="status" value="1" <?= isset($todo['status']) && $todo['status'] == 1 ? 'checked' : '' ?>> 完了
-                                        </td>
+                                                <!-- Radio button for status (the isset is to check if the status key exist in the $todo array) -->
+                                            <td>
+                                                <input type="radio" name="status" value="0" <?= $todo['status'] == 0 ? 'checked' : '' ?>> 未完了  <!-- Incomplete -->
+                                                <input type="radio" name="status" value="1" <?= $todo['status'] == 1 ? 'checked' : '' ?>> 完了    <!-- Complete -->
+                                            </td>
 
-                                            <!-- Checkbox for deleting item -->
-                                        <td>
-                                            <input type="checkbox" name="delete" value="1"> 削除
-                                        </td>
+                                                <!-- Checkbox for deleting item -->
+                                            <td>
+                                                <input type="checkbox" name="delete" value="1"> 削除
+                                            </td>
 
-                                            <!-- Submit button for the form -->
-                                        <td>
-                                            <button type="submit" class="update">送信</button>
-                                        </td>
-                                    </form>
+                                                <!-- Submit button for the form -->
+                                            <td>
+                                                <button type="submit" class="update">送信</button>
+                                            </td>
+                                        </form>
                                 </tr>
                             <?php endforeach; ?>
                         </table>
@@ -106,3 +118,4 @@ try {
     </main>
 </body>
 </html>
+
