@@ -76,12 +76,12 @@ try {
                             <?php foreach ($todos as $todo): ?>
                                 <tr>
                                         <td>
-                                            <span style="<?= $todo['status'] == 1 ? 'completed' : ''; ?>">
+                                            <span class="<?= $todo['status'] == 1 ? 'completed' : ''; ?>">
                                                 <?= htmlspecialchars($todo['expiration_date']) ?>
                                             </span>
                                         </td>
                                         <td>
-                                            <span style="<?= $todo['status'] == 1 ? 'completed' : ''; ?>">
+                                            <span class="<?= $todo['status'] == 1 ? 'completed' : ''; ?>">
                                                 <?= htmlspecialchars($todo['todo_item']) ?>
                                             </span>
                                         </td>
