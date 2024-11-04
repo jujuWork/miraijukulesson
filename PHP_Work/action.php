@@ -12,11 +12,12 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Check if the for data was posted from index.php
-    // if (isset($_POST['id'])) {
-    $id = (int)$_POST['id'];                     // Ensure ID is a number
-    $status = ($_POST['status']); // ? (int)$_POST['status'] : 0;        // Get Status or set to 0
+    $id = $_POST['id'];                     // Ensure ID is a number
+    $status = $_POST['status']; // ? (int)$_POST['status'] : 0;        // Get Status or set to 0
     $delete = isset($_POST['delete']) ? 1 : 0;      // True if the delete checkbox was checked
 
+    var_dump($id, $status, $delete);
+    exit;
             // IF delete is checked, delete the item
         if ($delete) {
             $sql = "DELETE FROM todo_items WHERE id = :id";
