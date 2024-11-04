@@ -12,27 +12,23 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Check if the for data was posted from index.php
-    if (isset($_POST['id'])) {
-        $id = (int)$_POST['id'];                     // Ensure ID is a number
-        $status = isset($_POST['status']); // ? (int)$_POST['status'] : 0;        // Get Status or set to 0
-        $delete = isset($_POST['delete']) ? 1 : 0;      // True if the delete checkbox was checked
+    // if (isset($_POST['id'])) {
+    $id = (int)$_POST['id'];                     // Ensure ID is a number
+    $status = ($_POST['status']); // ? (int)$_POST['status'] : 0;        // Get Status or set to 0
+    $delete = isset($_POST['delete']) ? 1 : 0;      // True if the delete checkbox was checked
 
             // IF delete is checked, delete the item
         if ($delete) {
             $sql = "DELETE FROM todo_items WHERE id = :id";
             $stmt = $pdo->prepare($sql);
-            $stmt->execute(['id' => $id]);
-
-            echo "Item delete successfully. <br>";
-        }
-
-            // Otherwise, update the item's status
-        else {
-            echo "No delete action taken. <br>";
-            $stmt = $pdo->prepare($sql);
             $stmt->execute([':id' => $id]);
+
+        } else {
+            $sql = "UPDATE todo_items SET status = :status WHERE id = :id";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([':status' => $status, ':id' => $id]);
         }
-    }
+    //}
 
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();

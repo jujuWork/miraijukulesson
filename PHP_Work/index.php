@@ -68,7 +68,7 @@ try {
                         <table>
                             <tr>
                                 <th>期限日</th>
-                                <th>TODO項目</th>
+                                <th class="complete">TODO項目</th>
                                 <th></th>
                                 <th></th>
                                 <th></th>
