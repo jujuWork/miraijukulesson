@@ -1,5 +1,7 @@
 <?php
 
+session_start(); // Starting session to save error message
+
 ini_set('display_erros', 1);
 error_reporting(E_ALL);
 
@@ -26,3 +28,4 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
 }
 
 header("Location: index.php");
+exit();
