@@ -14,8 +14,6 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
         // Setting the file destination
     $targetFile = 'images/' . basename($_FILES['image']['name']);
 
-    var_dump($targetFile);
-    exit;
         // Move the upload file to the "Images Folder"
     if (move_uploaded_file($_FILES['image']['tmp_name'], $targetFile)) {
         echo "File Upload Successfull";
