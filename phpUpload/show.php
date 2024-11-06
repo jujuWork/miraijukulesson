@@ -5,20 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Slideshow</title>
 
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-
-    <style>
-        #slideshow {
-            max-width: 600px;
-            margin: auto;
-            position: relative;
-        }
-
-        #slideshow img {
-            width: 100%;
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -47,17 +34,13 @@
             const imageCount = images.length;
 
             if (imageCount > 0) {
-                images.eq(currentIndex).show(); // Show First Image
+                images.eq(currentIndex).addClass('active'); // Show First Image
 
                 setInterval(function() {
-                    console.log('Current index:', currentIndex);
-                        images.eq(currentIndex).hide(); // Hide the current image with fade out effect
+                        images.eq(currentIndex).removeClass('active'); // Hide the current image with fade out effect
                         currentIndex = (currentIndex + 1) % imageCount; // Move to the next image
-                        image.eq(currentIndex).show(); // Show the next image with faded in effect
-                    console.log('Next image index:', currentIndex);
+                        images.eq(currentIndex).addClass('active'); // Show the next image with faded in effect
                 }, 2000); // Change every 2 seconds
-            } else {
-                console.log("No images found for the slideshow");
             }
         });
     </script>
