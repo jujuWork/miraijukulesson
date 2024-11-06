@@ -16,10 +16,13 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
 
         // Move the upload file to the "Images Folder"
     if (move_uploaded_file($_FILES['image']['tmp_name'], $targetFile)) {
-        echo "File Upload Successfull";
+        header("Location: index.php"); // Redirect back to form after successful upload
+        exit();
     } else {
-        echo "File Upload Error";
+        $_SESSION['error_message'] = "Error: Could not save the uploaded file.";
     }
 } else {
-    echo "Error: No file uploaded";
+    $_SESSION['error_message'] = "Error: No file uploaded or there was an upload error";
 }
+
+header("Location: index.php");
