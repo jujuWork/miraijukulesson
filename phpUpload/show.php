@@ -34,13 +34,13 @@
             const imageCount = images.length;
 
             if (imageCount > 0) {
-                images.eq(currentIndex).addClass('active'); // Show First Image
+                images.eq(currentIndex).show; // Show First Image
 
                 setInterval(function() {
-                        images.eq(currentIndex).removeClass('active'); // Hide the current image with fade out effect
+                        images.eq(currentIndex).fadeOut(500); // Hide the current image with fade out effect
                         currentIndex = (currentIndex + 1) % imageCount; // Move to the next image
-                        images.eq(currentIndex).addClass('active'); // Show the next image with faded in effect
-                }, 2000); // Change every 2 seconds
+                        images.eq(currentIndex).fadeIn(500); // Show the next image with faded in effect
+                }, 3000); // Change every 3 seconds
             }
         });
     </script>
