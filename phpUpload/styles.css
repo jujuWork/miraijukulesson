@@ -1,0 +1,31 @@
+html {
+    border: 1px solid grey;
+    margin: 50px auto;
+    padding: 0;
+    width: 800px;
+    box-sizing: border-box;
+}
+
+#slideshow {
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+}
+
+#slideshow img {
+    width: 100%;
+    display: none;
+}
+
+#slideshow img.active {
+    display: block;
+}
+
+h2 {
+    width: 100%;
+    text-align: center;
+}
+
+div {
+    width: 100%;
+}

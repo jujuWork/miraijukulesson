@@ -19,7 +19,7 @@
     ?>
 
         <!-- Upload form for image file -->
-    <form action="action.php" method="post">
+    <form action="action.php" method="post" enctype="multipart/form-data">
         <input type="file" name="image" required>
         <button type="submit">Upload</button>
     </form>
