@@ -50,10 +50,14 @@
                 images.eq(currentIndex).show(); // Show First Image
 
                 setInterval(function() {
-                    images.eq(currentIndex).hide(); // Hide the current image with fade out effect
-                    currentIndex = (currentIndex + 1) % imageCount; // Move to the next image
-                    image.eq(currentIndex).show(); // Show the next image with faded in effect
+                    console.log('Current index:', currentIndex);
+                        images.eq(currentIndex).hide(); // Hide the current image with fade out effect
+                        currentIndex = (currentIndex + 1) % imageCount; // Move to the next image
+                        image.eq(currentIndex).show(); // Show the next image with faded in effect
+                    console.log('Next image index:', currentIndex);
                 }, 2000); // Change every 2 seconds
+            } else {
+                console.log("No images found for the slideshow");
             }
         });
     </script>
