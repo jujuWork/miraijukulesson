@@ -27,7 +27,13 @@ try {
             $stmt = $pdo->prepare($sql);
             $stmt->execute([':status' => $status, ':id' => $id]);
         }
-    //}
+
+            // CSV DOWNLOAD
+        // Query to select all records from the todo_items table
+    $stmt = $pdo->query("SELECT * FROM todo_items");
+        
+        // Set headers to force download as a CSV file
+    header('Content-Type: application/csv; charset=Shift-JIS');
 
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();

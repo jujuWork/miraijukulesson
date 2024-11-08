@@ -115,6 +115,11 @@ try {
                     <p>No to-do items found.</p>
             <?php endif; ?>
         </aside>
+        <section>
+            <form action="action.php">
+                <button type="button" class="csvButton">CSV Download</button>
+            </form>
+        </section>
     </main>
 </body>
 </html>

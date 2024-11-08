@@ -45,7 +45,7 @@ aside  {
     margin-top: 20px;
 }
 
-table{
+table {
     width: 100%;
     border-bottom: 1px solid rgba(0,0,0,0.3);
 }
@@ -59,8 +59,20 @@ th, td {
 .update {
     background-color: rgba(0,0,255,0.75);
     color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .completed {
     text-decoration: line-through;
+}
+
+.csvButton {
+    width: 20%;
+    margin-top: 30px;
+    background-color: rgba(0,0,255,0.75);
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
 }
