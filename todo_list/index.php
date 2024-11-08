@@ -116,7 +116,7 @@ try {
             <?php endif; ?>
         </aside>
         <section>
-            <form action="action.php">
+            <form action="csvDownload.php" method="post">
                 <button type="button" class="csvButton">CSV Download</button>
             </form>
         </section>
