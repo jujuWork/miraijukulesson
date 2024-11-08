@@ -116,9 +116,9 @@ try {
             <?php endif; ?>
         </aside>
         <section>
-            <form action="csvDownload.php" method="post">
-                <button type="button" class="csvButton">CSV Download</button>
-            </form>
+            <a href="csvDownload.php">
+                <p class="csvLink">CSV Download</p>
+            </a>
         </section>
     </main>
 </body>
