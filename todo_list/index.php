@@ -122,7 +122,7 @@ try {
                     <a href="csvDownload.php">CSV Download</a>
                 </button>
                 <button type="button" class="btnUpload">
-                    <a href="csvUpload.php">CSV Upload</a>
+                    <a href="csvUpload.php" name="file" id="file" >CSV Upload</a>
                 </button>
             </div>
         </section>
