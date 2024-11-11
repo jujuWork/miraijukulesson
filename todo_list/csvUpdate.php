@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['files'])) {
     try {
             // Establish a database connection
         $pdo = new PDO($dsn, $username, $password);
-        $pdo->setAttribute(PDO:ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Open uploaded CSV file
         $file = $_FILES['file']['tmp_name'];
