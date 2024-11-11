@@ -115,14 +115,16 @@ try {
                     <p>No to-do items found.</p>
             <?php endif; ?>
         </aside>
-        
+
         <section class="link">
-            <button type="button" class="btnDownload">
-                <a href="csvDownload.php">CSV Download</a>
-            </button>
-            <button type="button" class="btnUpload">
-                <a href="csvUpload.php">CSV Upload</a>
-            </button>
+            <div class="btnAction">
+                <button type="button" class="btnDownload">
+                    <a href="csvDownload.php">CSV Download</a>
+                </button>
+                <button type="button" class="btnUpload">
+                    <a href="csvUpload.php">CSV Upload</a>
+                </button>
+            </div>
         </section>
     </main>
 </body>
