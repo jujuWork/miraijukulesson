@@ -71,11 +71,23 @@ th, td {
     text-decoration: line-through;
 }
 
-.csvLink {
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.link > .btnDownload, .btnUpload {
+    height: 40px;
+    font-size: 1.1em;
+}
+
+/* .csvLink {
     width: 20%;
     padding: 5px;
     cursor: pointer;
     border: 1px solid black;
     text-align: center;
     border-radius: 5px;
-}
+} */
