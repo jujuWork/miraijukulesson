@@ -16,7 +16,7 @@ class TodoItems extends Base {
         *    // Get all records (sorted by oldest expiration date)
         * @return array
         */
-    public function selectAll(){
+    public function selectAll() {
         try {
                 // Create SQL statement to get all todo items
             $sql = "SELECT * FROM todo_items ORDER BY expiration_date ASC";
@@ -34,5 +34,4 @@ class TodoItems extends Base {
             return [];
         }
     }
-
 }
