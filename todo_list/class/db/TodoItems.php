@@ -17,6 +17,12 @@ class TodoItems extends Base {
         * @return array
         */
     public function selectAll() {
+        
+        if ($this->pdo === null) {
+            echo "Database connection not established";
+            return [];
+        }
+
         try {
                 // Create SQL statement to get all todo items
             $sql = "SELECT * FROM todo_items ORDER BY expiration_date ASC";
