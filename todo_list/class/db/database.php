@@ -5,6 +5,7 @@ class Database {
     private $username = 'root';
     private $password = 'root';
     private $dbname = 'todolistdatabase';
+    private $port = '8889';
 
     public $connection;
         
@@ -16,7 +17,7 @@ class Database {
             // Method to connect to the database
         
     private function connect() {
-        $this->connection = new mysqli($this->host, $this->username, $this->password, $this->dbname);
+        $this->connection = new mysqli($this->host, $this->username, $this->password, $this->dbname, $this->port);
             if ($this->connection->connect_error) {    
                 die("Connection failed: " . $this->connection->connect_error);
             }
