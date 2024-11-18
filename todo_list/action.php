@@ -8,7 +8,7 @@ $password = 'root';
 
 try {
         // Connect to the database(IMPORTANT!!)
-    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charutd=8", $username, $password);
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charutf=8", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Check if the for data was posted from index.php

@@ -16,7 +16,7 @@ class Base {
     {
         try {
                 // Create DSN (Data Source Name) string
-            $dsn = 'mysql:host=' . self::DB_HOST . ';port=' . self::DB_PORT . ';dbname=' . self::DB_NAME;
+            $dsn = 'mysql:host=' . self::DB_HOST . ';dbname=' . self::DB_NAME .  ';port=' . self::DB_PORT;
 
                 // Create a PDO instance and assign it to $pdo
             $this->pdo = new PDO($dsn, self::DB_USER, self::DB_PASS);

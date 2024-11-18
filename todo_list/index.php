@@ -12,17 +12,17 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // RETRIEVE ALL DATA
-    $sql = "SELECT expiration_date, todo_item, id, status FROM todo_items";
-    $stmt = $pdo->query($sql);
+    // $sql = "SELECT expiration_date, todo_item, id, status FROM todo_items";
+    $stmt = $pdo->query("SELECT * FROM todo_items");
 
         // FETCH ALL RESULT
     $todos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
 
 } catch (PDOException $e) {
     echo "Connection Failed: " . $e->getMessage();
 }
-// var_dump($todos);
-// exit;
+
 
 ?>
 <!DOCTYPE html>
