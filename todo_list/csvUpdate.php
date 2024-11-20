@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
             // Establish a database connection
         $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        error_reporting(E_ALL);
-        ini_set("DisplayErrors". 1);
+        
+        $stmt = $pdo->query("SELECT DATABASE()");
 
             // Open uploaded CSV file
         $file = $_FILES['file']['tmp_name'];
@@ -29,15 +29,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
 
             // Read each lin in the CSV file
         while (($todo = fgetcsv($fp)) !== false) {
-            echo "Row read: " . implode(", ", $todo) . "<br>";
                 // Skip header row if there is one
             if ($firstrow) {
+                echo "Row read: " . implode(", ", $todo) . "<br>";
                 $firstrow = false;
                 continue;
             }
                 // Convert the encoding of each row from Shift-JIS to UTF-8
             $todo = array_map(fn($field) => mb_convert_encoding($field, 'UTF-8', 'SJIS-win'), $todo);
-
                 // Ensure we have exactly number of columns
             if (count($todo) !== 5) {
                 // throw new Exception("CSV row format is incorrect");
@@ -50,12 +49,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
                 // Ensure 'is_completed is an integer
             $is_completed = (int)$is_completed;
 
-            // echo "Updating ID $id with expiration_date: $expiration_date, todo_item: $todo_item, is_completed: $is_completed, status: $status<br>";
+            $checkStmt = $pdo->prepare("SELECT COUNT(*) FROM todo_items WHERE id = :id");
+            $checkStmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $checkStmt->execute();
+                if ($checkStmt->fetchColumn() == 0){
+                    echo "ID $id doest no exist in the database";
+                    continue;
+                }
 
+            // if (!is_numeric($id)) {
+            //     echo "Invalid ID: $id in row: " . implode(", ", $todo) . "<br>";
+            //     continue;
+            // }
 
-            if (!is_numeric($id)) {
-                echo "Invalid ID: $id in row: " . implode(", ", $todo) . "<br>";
-            }
+            echo "Updating row: ID = $id, 
+            expiration_date = $expiration_date, 
+            todo_item = $todo_item, is_completed = 
+            $is_completed, status = 
+            $status<br>";
 
                 // Updating record with macting ID
             // $stmt = $pdo->prepare("UPDATE todo_items SET expiration_date = ?, todo_item = ?, is_completed = ? Where id = ?");
