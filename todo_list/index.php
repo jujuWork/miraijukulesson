@@ -121,7 +121,7 @@ try {
                     <a href="csvDownload.php">CSV Download</a>
                 </button>
                 <button type="button" class="btnUpload">
-                    <a href="csvUpload.php">CSV Upload</a>
+                    <a href="Upload.php">CSV Upload</a>
                 </button>
                 <button type="button" class="btnDownload">
                     <a href="csvDownloadRecords.php">CSV Download Records</a>
