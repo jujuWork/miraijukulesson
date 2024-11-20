@@ -13,12 +13,11 @@ try {
 
         // RETRIEVE ALL DATA
     // $sql = "SELECT expiration_date, todo_item, id, status FROM todo_items";
-    $stmt = $pdo->query("SELECT * FROM todo_items");
+    $stmt = $pdo->query("SELECT * FROM todo_items ORDER BY id ASC");
 
         // FETCH ALL RESULT
     $todos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-
 } catch (PDOException $e) {
     echo "Connection Failed: " . $e->getMessage();
 }

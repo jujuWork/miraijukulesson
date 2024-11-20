@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
                 // Ensure we have exactly number of columns
             if (count($todo) !== 5) {
                 // throw new Exception("CSV row format is incorrect");
-                echo "Skipping invalid row: " . implode(", ", $todo) . "<br>";
+                echo "Invalid row: " . implode(", ", $todo) . "<br>";
                 continue;
             }
 
@@ -47,12 +47,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
                 // Ensure 'is_completed is an integer
             $is_completed = (int)$is_completed;
 
-            echo "Updating ID $id with expiration_date: $expiration_date, todo_item: $todo_item, is_completed: $is_completed, status: $status<br>";
+            // echo "Updating ID $id with expiration_date: $expiration_date, todo_item: $todo_item, is_completed: $is_completed, status: $status<br>";
 
 
-            // if (!is_numeric($id)) {
-            //     throw new Exception("Invalid ID format: $id is no numeric.");
-            // }
+            if (!is_numeric($id)) {
+                echo "Invalid ID: $id in row: " . implode(", ", $todo) . "<br>";
+            }
 
                 // Updating record with macting ID
             // $stmt = $pdo->prepare("UPDATE todo_items SET expiration_date = ?, todo_item = ?, is_completed = ? Where id = ?");
@@ -60,10 +60,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
 
             $stmt = $pdo->prepare("UPDATE todo_items 
                                     SET expiration_date = :expiration_date, 
-                                    todo_item = :todo_item, 
-                                    is_completed = :is_completed,
-                                    status = :status
-                                    WHERE id = :id");
+                                        todo_item = :todo_item, 
+                                        is_completed = :is_completed,
+                                        status = :status
+                                    WHERE id = :id"
+                                    );
+
             $stmt->bindParam(':expiration_date', $expiration_date, PDO::PARAM_STR);
             $stmt->bindParam(':todo_item', $todo_item, PDO::PARAM_STR);
             $stmt->bindParam(':is_completed', $is_completed, PDO::PARAM_INT);
@@ -72,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
 
             $stmt->execute();
 
-            echo "Rows Updated: " . $stmt->rowCount() . "<br>";
+            echo "Processed ID: $id, Rows Updated: " . $stmt->rowCount() . "<br>";
 
         }
 
@@ -82,8 +84,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
         exit;
     } catch (PDOException $e) {
         echo "Database error: " . $e->getMessage();
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
     }
 } else {
     echo 'File Upload failed. Please try again';

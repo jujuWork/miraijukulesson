@@ -23,13 +23,13 @@ try {
 
         // Fetch column names for header row
     $columnNames = array_keys($stmt->fetch(PDO::FETCH_ASSOC));
-    fputcsv($output, array_map(fn($col) => mb_convert_encoding($col, 'SJIS-win', 'UTF-8'), $columnNames));
+    fputcsv($output, array_map(fn($col) => mb_convert_encoding($col, 'SHIFT-JIS', 'UTF-8'), $columnNames));
 
         // Reset Pointer and fetch all rows
     $stmt->execute(); // Re-execute to reset the cursor
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             // Write each row to CSV after converting
-        fputcsv($output, array_map(fn($field) => mb_convert_encoding($field, 'SJIS-win', 'UTF-8'), $row));
+        fputcsv($output, array_map(fn($field) => mb_convert_encoding($field, 'SHIFT-JIS', 'UTF-8'), $row));
     }
 
         // Close the output stream
