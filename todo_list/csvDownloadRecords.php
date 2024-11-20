@@ -15,7 +15,7 @@ try {
 
         // Set headers to make the browser download the file as CSV
     header('Content-Type: text/csv; charset=Shift-JIS');
-    header('Content-Disposition: attachment; filename="todo_items.csv"');
+    header('Content-Disposition: attachment; filename="todo_items_records.csv"');
         
         // Open a file output mode
     $output = fopen('php://output', 'w');
