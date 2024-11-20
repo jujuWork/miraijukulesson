@@ -11,6 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
             // Establish a database connection
         $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        error_reporting(E_ALL);
+        ini_set("DisplayErrors". 1);
 
             // Open uploaded CSV file
         $file = $_FILES['file']['tmp_name'];
@@ -27,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
 
             // Read each lin in the CSV file
         while (($todo = fgetcsv($fp)) !== false) {
+            echo "Row read: " . implode(", ", $todo) . "<br>";
                 // Skip header row if there is one
             if ($firstrow) {
                 $firstrow = false;
