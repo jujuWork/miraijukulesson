@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
                 // Ensure 'is_completed is an integer
             $is_completed = (int)$is_completed;
 
+                // Inserting new ID into the Database if the id in the csv file didn't exist
             $checkStmt = $pdo->prepare("SELECT COUNT(*) FROM todo_items WHERE id = :id");
             $checkStmt->bindParam(':id', $id, PDO::PARAM_INT);
             $checkStmt->execute();
