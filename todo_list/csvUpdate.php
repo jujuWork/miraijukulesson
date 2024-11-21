@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
 
             // Open uploaded CSV file
         $file = $_FILES['file']['tmp_name'];
-            if (!is_uploaded_file($file)) {       // Checking if the file uploaded is Sucessful.
+            if (!file_exists($file)) {       // Debugging Check if the file uploaded is Sucessful.
                 die("File upload failed or no file uploaded.");
             }
 
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
                 continue;
             }
                 // Convert the encoding of each row from Shift-JIS to UTF-8
-            $todo = array_map(fn($field) => mb_convert_encoding($field, 'UTF-8', 'SJIS-win'), $todo);
+            $todo = array_map(fn($field) => mb_convert_encoding($field, 'SJIS-win', 'UTF-8'), $todo);
                 // Ensure we have exactly number of columns
             if (count($todo) !== 5) {
                 // throw new Exception("CSV row format is incorrect");
@@ -53,42 +53,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
             $checkStmt->bindParam(':id', $id, PDO::PARAM_INT);
             $checkStmt->execute();
                 if ($checkStmt->fetchColumn() == 0){
-                    echo "ID $id doest no exist in the database";
-                    continue;
+                    echo "ID $id does not exist. Inserting new record...<br>";
+    
+                        $insertStmt = $pdo->prepare("INSERT INTO todo_items (id, expiration_date, todo_item, is_completed, status)
+                                                    VALUES (:id, :expiration_date, :todo_item, :is_completed, :status)");
+                        $insertStmt->bindParam(':id', $id, PDO::PARAM_INT);
+                        $insertStmt->bindParam(':expiration_date', $expiration_date, PDO::PARAM_STR);
+                        $insertStmt->bindParam(':todo_item', $todo_item, PDO::PARAM_STR);
+                        $insertStmt->bindParam(':is_completed', $is_completed, PDO::PARAM_INT);
+                        $insertStmt->bindParam(':status', $status, PDO::PARAM_STR);
+                        $insertStmt->execute();
+                        
+                        echo "Inserted new record for ID $id<br>";
+                        continue;
                 }
 
-            // if (!is_numeric($id)) {
-            //     echo "Invalid ID: $id in row: " . implode(", ", $todo) . "<br>";
-            //     continue;
-            // }
 
-            echo "Updating row: ID = $id, 
-            expiration_date = $expiration_date, 
-            todo_item = $todo_item, is_completed = 
-            $is_completed, status = 
-            $status<br>";
+            // $stmt = $pdo->prepare("UPDATE todo_items 
+            //                         SET expiration_date = :expiration_date, 
+            //                             todo_item = :todo_item, 
+            //                             is_completed = :is_completed,
+            //                             status = :status
+            //                         WHERE id = :id"
+            //                         );
 
-                // Updating record with macting ID
-            // $stmt = $pdo->prepare("UPDATE todo_items SET expiration_date = ?, todo_item = ?, is_completed = ? Where id = ?");
-            // $stmt->execute([$expiration_date, $todo_item, $is_completed, $id]);
+            // $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            // $stmt->bindParam(':expiration_date', $expiration_date, PDO::PARAM_STR);
+            // $stmt->bindParam(':todo_item', $todo_item, PDO::PARAM_STR);
+            // $stmt->bindParam(':is_completed', $is_completed, PDO::PARAM_INT);
+            // $stmt->bindParam(':status', $status, PDO::PARAM_STR);
+            // $stmt->execute();
 
-            $stmt = $pdo->prepare("UPDATE todo_items 
-                                    SET expiration_date = :expiration_date, 
-                                        todo_item = :todo_item, 
-                                        is_completed = :is_completed,
-                                        status = :status
-                                    WHERE id = :id"
-                                    );
-
-            $stmt->bindParam(':expiration_date', $expiration_date, PDO::PARAM_STR);
-            $stmt->bindParam(':todo_item', $todo_item, PDO::PARAM_STR);
-            $stmt->bindParam(':is_completed', $is_completed, PDO::PARAM_INT);
-            $stmt->bindParam(':status', $status, PDO::PARAM_STR);
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-
-            $stmt->execute();
-
-            echo "Processed ID: $id, Rows Updated: " . $stmt->rowCount() . "<br>";
+            // echo "Processed ID: $id, Rows Updated: " . $stmt->rowCount() . "<br>";
 
         }
 
