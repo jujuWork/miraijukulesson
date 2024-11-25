@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" href="loginstyles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     
@@ -22,7 +22,7 @@
 
         <div class="menu">
             <span>
-                Forget <a href="forgot.php">Username / Password</a> ?
+                Forget <a href="forgot.php">Username/Password</a>?
             </span> <br>
             <span>
                 Don't have an account? <a href="signup.php"> Sign up</a>
