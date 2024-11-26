@@ -23,8 +23,8 @@ function is_email_invalid(string $email) {
 }
 
      // Checking if the username is taken
-function is_username_taken(string $username) {
-     if () {
+function is_username_taken(object $pdo, string $username) {
+     if (get_username($pdo, $username)) {
           return true;
      } else {
           return false;
