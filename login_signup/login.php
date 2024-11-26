@@ -22,9 +22,6 @@
 
         <div class="menu">
             <span>
-                Forget <a href="forgot.php">Username/Password</a>?
-            </span> <br>
-            <span>
                 Don't have an account? <a href="signup.php"> Sign up</a>
             </span>
         </div>

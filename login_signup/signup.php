@@ -13,7 +13,7 @@
         <h3>Sign Up</h3>
             
         <div class="login">
-            <form action="includes/signup.php" method="post">
+            <form action="includes/signup.inc.php" method="post">
                 <label for="username" class="label">Username:</label>
                     <input type="text" name="username" placeholder="Enter username">
                 <label for="password" class="label">Password:</label>
