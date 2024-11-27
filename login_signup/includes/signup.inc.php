@@ -13,11 +13,20 @@
             require_once 'signup_ctrl.inc.php'; // controller second order
 
                 // Errors handlers
+            $errors = [];
+
             if (is_input_empty($username, $password, $email)) { 
+                $errors["empty_input"] = "Fill in all fields";
             }
             if (is_email_invalid($email)) { // validating email
+                $errors["invalid_email"] = "Invalid Email";
             }
-
+            if (is_username_taken($pdo, $username)) { // validating username
+                $errors["username_taken"] = "Username already taken";
+            }
+            if (is_email_registered($pdo, $email)) { // validating username
+                $errors["email_used"] = "Email already registered";
+            }
 
         } catch (PDOException $e) {
             die("Query Failed: " . $e->getMessage());
